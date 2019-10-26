@@ -1,2 +1,2 @@
-# Imagepro
+# Image processing
 PSIT
