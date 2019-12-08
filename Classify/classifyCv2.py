@@ -32,12 +32,13 @@ with tf.compat.v1.Session() as sess:
                 score = predictions[0][node_id]
                 print('%s (score = %.5f)' % (detectface, score))
                 if score >= 0.90:
-                    print(detectface)
+                    showpro = detectface
                     i += 1
             print("\n\n")
             cv2.imshow("image", frame)
             cv2.waitKey(1)
         else:
+            print("Hello {}".format(showpro))
             break
 
 
