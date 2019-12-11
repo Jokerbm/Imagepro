@@ -215,7 +215,7 @@
    Login-popup
 --------------------- */
 
-var modal = document.getElementById('popup-login');
+var modal = document.getElementById('popup-signin');
 
 window.onclick = function(event) {
   if (event.target == modal) {
