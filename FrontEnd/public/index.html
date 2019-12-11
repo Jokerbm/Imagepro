@@ -93,8 +93,8 @@
                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Log-in<span
                         class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href=#>Member</a></li>
-                      <li><a href=#>Admin</a></li>
+                      <li><button onclick="document.getElementById('popup-login').style.display='block'" style="width:auto;">Member</button></li>
+                      <li><button onclick="document.getElementById('popup-login').style.display='block'" style="width:auto;">Admin</button></li>
                     </ul>
                   </li>
                   <li>
@@ -112,6 +112,29 @@
     <!-- header-area end -->
   </header>
   <!-- header end -->
+
+<!-- Login popup -->
+<div id="popup-login" class="modal" style="z-index: 10;">
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('popup-login').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h1>Sign-in</h1>
+      </div>
+  
+      <div class="container" style="padding: 16px;">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    </form>
+  </div>
 
   <!-- Start Slider Area -->
   <div id="home" class="slider-area">
