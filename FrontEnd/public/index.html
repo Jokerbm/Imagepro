@@ -90,13 +90,13 @@
                     <a class="page-scroll" href="#team">Team</a>
                   </li>
 
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Log-in<span
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<span
                         class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><button onclick="document.getElementById('popup-login').style.display='block'"
-                          style="width:auto;">Member</button></li>
-                      <li><button onclick="document.getElementById('popup-login').style.display='block'"
-                          style="width:auto;">Admin</button></li>
+                      <li><button onclick="document.getElementById('popup-signin').style.display='block'"
+                          style="width:auto;">SignIn</button></li>
+                      <li><button onclick="document.getElementById('popup-signup').style.display='block'"
+                          style="width:auto;">SignUp</button></li>
                     </ul>
                   </li>
                   <li>
@@ -115,29 +115,43 @@
   </header>
   <!-- header end -->
 
-  <!-- Login popup -->
-  <div id="popup-login" class="modal" style="z-index: 10;">
+  <!-- Signin popup -->
+  <div id="popup-signin" class="modal" style="z-index: 10;">
     <form class="modal-content animate">
       <div class="imgcontainer">
-        <span onclick="document.getElementById('popup-login').style.display='none'" class="close"
+        <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
           title="Close Modal">&times;</span>
-        <h1>Sign-in</h1>
+        <h1>Sign in</h1>
       </div>
 
       <div class="container" style="padding: 16px;">
-        <label for="uname"><b>Username</b></label>
-        <input id="username" type="text" placeholder="Enter Username" name="uname" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input id="password" type="password" placeholder="Enter Password" name="psw" required>
-
-        <button id="submit-login" type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <b>Email</b>
+        <input id="email" type="text" placeholder="Enter Username" required>
+        <b>Password</b>
+        <input id="password" type="password" placeholder="Enter Password" required>
+        <button id="submit-signin" type="submit">Sign In</button>
       </div>
     </form>
   </div>
+
+  <!-- Signup popup -->
+  <div id="popup-signup" class="modal" style="z-index: 10;">
+      <form id="signup-from" class="modal-content animate">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <h1>Sign-up</h1>
+        </div>
+  
+        <div class="container" style="padding: 16px;">
+            <b>Email</b>
+            <input id="signup-email" type="text" placeholder="Enter Username">
+            <b>Password</b>
+            <input id="signup-password" type="password" placeholder="Enter Password">
+          <button id="submit-signup" type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
 
   <!-- Start Slider Area -->
   <div id="home" class="slider-area">
@@ -1147,8 +1161,9 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
   
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -1166,7 +1181,8 @@
   <script src="contactform/contactform.js"></script>
 
   <script src="js/main.js"></script>
-  <script src="backend/login.js"></script>
+  <script src="backend/connfirebase.js"></script>
+  <script src="backend/auth.js"></script>
 </body>
 
 </html>
