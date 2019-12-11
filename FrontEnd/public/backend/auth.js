@@ -59,7 +59,7 @@ const logout = document.querySelector("#logout");
 logout.addEventListener('click', (e) => {
     auth.signOut().then(() => {
         console.log("bye")
-        location.reload();
+        window.location = "index.html";
     })
 })
 
