@@ -21,5 +21,19 @@ signupFrom.addEventListener('submit', (e) => {
 
 //Sign In
 
+const signinFrom = document.querySelector("#signin-from");
+
+signinFrom.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = signinFrom['signin-email'].value;
+    const password = signinFrom['signin-password'].value;
+
+    auth.signInWithEmailAndPassword(email, password).then(cred => {
+        var modal = document.getElementById('popup-signup');
+        modal.style.display = "none";
+        signinFrom.reset();
+    })
+})
 
 //End Sign In

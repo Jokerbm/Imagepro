@@ -117,7 +117,7 @@
 
   <!-- Signin popup -->
   <div id="popup-signin" class="modal" style="z-index: 10;">
-    <form class="modal-content animate">
+    <form id="signin-from" class="modal-content animate">
       <div class="imgcontainer">
         <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
           title="Close Modal">&times;</span>
@@ -126,9 +126,9 @@
 
       <div class="container" style="padding: 16px;">
         <b>Email</b>
-        <input id="email" type="text" placeholder="Enter Username" required>
+        <input id="signin-email" type="text" placeholder="Enter Username" required>
         <b>Password</b>
-        <input id="password" type="password" placeholder="Enter Password" required>
+        <input id="signin-password" type="password" placeholder="Enter Password" required>
         <button id="submit-signin" type="submit">Sign In</button>
       </div>
     </form>
@@ -145,9 +145,9 @@
   
         <div class="container" style="padding: 16px;">
             <b>Email</b>
-            <input id="signup-email" type="text" placeholder="Enter Username">
+            <input id="signup-email" type="text" placeholder="Enter Username" required>
             <b>Password</b>
-            <input id="signup-password" type="password" placeholder="Enter Password">
+            <input id="signup-password" type="password" placeholder="Enter Password" required>
           <button id="submit-signup" type="submit">Sign Up</button>
         </div>
       </form>
