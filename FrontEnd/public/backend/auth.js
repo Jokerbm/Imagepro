@@ -1,3 +1,16 @@
+//Login Status
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        document.getElementById("user").innerHTML = "";
+        document.getElementById("status-user").innerHTML = user.email;
+    }
+    else {
+        document.getElementById("status-user").innerHTML = "";
+    }
+})
+
+
 //Sign Up
 
 const signupFrom = document.querySelector("#signup-from");
@@ -30,10 +43,24 @@ signinFrom.addEventListener('submit', (e) => {
     const password = signinFrom['signin-password'].value;
 
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-        var modal = document.getElementById('popup-signup');
+        var modal = document.getElementById('popup-signin');
         modal.style.display = "none";
         signinFrom.reset();
     })
 })
 
 //End Sign In
+
+
+//Logout
+
+const logout = document.querySelector("#logout");
+
+logout.addEventListener('click', (e) => {
+    auth.signOut().then(() => {
+        console.log("bye")
+        location.reload();
+    })
+})
+
+//
