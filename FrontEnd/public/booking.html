@@ -118,52 +118,56 @@
       </div>
     </div>
 
-      <div id="alert-login" class="container" style="margin-top: 20%; display: block;">
-          <h1>Please Login before Booking</h1>
-          <button style="width: 100%;background-color: #3EC1D5; border-radius: 30px;"
-          onclick="document.getElementById('popup-signin').style.display='block'">Login</button>
-      </div>
-    <form id="booking" action="action_page.php" style="display: block;">
-      <div class="container" style="margin-top: 15%;">
-        <h1>IT HOTEL</h1>
-        <p>Please select in this fill to Booking a Room.</p>
-        <hr>
+    <div id="alert-login" class="container" style="margin-top: 20%; display: block;">
+      <h1>Please Login before Booking</h1>
+      <button style="width: 100%;background-color: #3EC1D5; border-radius: 30px;"
+        onclick="document.getElementById('popup-signin').style.display='block'">Login</button>
+    </div>
+    <div class="container" style="margin-top: 15%;">
+      <h1>IT HOTEL</h1>
+      <p>Please select in this fill to Booking a Room.</p>
+      <hr>
 
-        Date<input type="date" name="day">
-        <b>Select Room</b>
-        <select>
-            <option value="Standard">Standard</option>
-            <option value="Superior">Superior</option>
-            <option value="Deluxe">Deluxe</option>
-            <option value="Suite">Suite</option>
-          </select>
+      Date<input type="date" name="day">
+      <b>Select Room</b>
+      <select>
+        <option value="Standard">Standard</option>
+        <option value="Superior">Superior</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Suite">Suite</option>
+      </select>
 
-        <label for="-"><b>brabra</b></label>
-        <select>
-            <option value="volvo">-</option>
-            <option value="saab">-</option>
-            <option value="opel">-</option>
-            <option value="audi">-</option>
-          </select>
-          <p style="color:red">*Max 2 adults*</p>
-        <hr>
-        <br>
-        <h5>
-          Check-in with FACE:
-          <input onclick="" type="checkbox" value="face-on">
-        </h5>
-        <b>First name</b>
-        <input type="text">
-        <b>Last Name</b>
-        <input type="text">
-        <b>Email</b>
-        <input type="text">
-        <b>Phone number</b>
-        <input type="text">
-        <button type="submit" class="registerbtn">Book now</button>
+      <label for="-"><b>brabra</b></label>
+      <select>
+        <option value="-">-</option>
+        <option value="-">-</option>
+        <option value="-">-</option>
+        <option value="-">-</option>
+      </select>
+      <p style="color:red">*Max 2 adults*</p>
+      <hr>
+      <br>
+      <!-------------------------------SNAP---------------------------------->
+      <h5>Check-in with FACE</h5>
+      <input type="file" id="filebt"/>
+      <input type="checkbox" id="snap-face" onclick="snapface()">
+      <div id="snapslide" style="display:none; text-align: center;">
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="snap">Ready</button>
       </div>
-    </form>
-    
+      <!--------------------------------------------------------------------->
+      <p>Important</p>
+      <b>First name</b>
+      <input type="text">
+      <b>Last Name</b>
+      <input type="text">
+      <b>Email</b>
+      <input type="text">
+      <b>Phone number</b>
+      <input type="text">
+      <button type="submit" class="registerbtn">Book now</button>
+    </div>
+
 
 
     <!-- Signin popup -->
@@ -210,9 +214,9 @@
     </div>
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -232,6 +236,7 @@
 <script src="js/main.js"></script>
 <script src="backend/connfirebase.js"></script>
 <script src="backend/auth.js"></script>
+<script src="backend/sendimg.js"></script>
 </body>
 
 </html>
