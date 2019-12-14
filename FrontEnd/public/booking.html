@@ -46,9 +46,6 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
-
-  <div id="preloader"></div>
-
   <header>
     <!-- header-area start -->
     <div id="sticker" class="header-area">
@@ -96,18 +93,21 @@
                   <li id="user" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<span
                         class="caret"></span></a>
                     <ul style="background-color: rgba(0, 0, 0, 0.2);" class="dropdown-menu" role="menu">
-                      <li><button style="width: 100%;background-color: #3EC1D5;" onclick="document.getElementById('popup-signin').style.display='block'"
+                      <li><button style="width: 100%;background-color: #3EC1D5;"
+                          onclick="document.getElementById('popup-signin').style.display='block'"
                           style="width:auto;">SignIn</button></li>
-                      <li><button style="width: 100%;background-color: #3EC1D5;" onclick="document.getElementById('popup-signup').style.display='block'"
+                      <li><button style="width: 100%;background-color: #3EC1D5;"
+                          onclick="document.getElementById('popup-signup').style.display='block'"
                           style="width:auto;">SignUp</button></li>
                     </ul>
                   </li>
                   <li class="dropdown"><a href="#" id="status-user" class="dropdown-toggle" data-toggle="dropdown"></a>
-                <ul style="background-color: rgba(0, 0, 0, 0.2);"  class="dropdown-menu" role="menu">
-                  <li><a href="booking.html">Booking</a></li>
-                  <li><a href="#" id="logout">Logout</a></li>
-                </ul>
-              </li>
+                    <ul style="background-color: rgba(0, 0, 0, 0.2);" class="dropdown-menu" role="menu">
+                      <li><a href="booking.html">Booking</a></li>
+                      <li><a href="#">Details</a></li>
+                      <li><a href="#" id="logout">Logout</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <!-- navbar-collapse -->
@@ -117,72 +117,121 @@
         </div>
       </div>
     </div>
-    <!-- header-area end -->
-  </header>
-  
-  <!-- header end -->
 
-  <!-- Signin popup -->
-  <div id="popup-signin" class="modal" style="z-index: 10;">
-    <form id="signin-from" class="modal-content animate">
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
-          title="Close Modal">&times;</span>
-        <h1>Sign in</h1>
+      <div id="alert-login" class="container" style="margin-top: 20%; display: block;">
+          <h1>Please Login before Booking</h1>
+          <button style="width: 100%;background-color: #3EC1D5; border-radius: 30px;"
+          onclick="document.getElementById('popup-signin').style.display='block'">Login</button>
       </div>
+    <form id="booking" action="action_page.php" style="display: block;">
+      <div class="container" style="margin-top: 15%;">
+        <h1>IT HOTEL</h1>
+        <p>Please select in this fill to Booking a Room.</p>
+        <hr>
 
-      <div class="container" style="padding: 16px;">
+        Date<input type="date" name="day">
+        <b>Select Room</b>
+        <select>
+            <option value="Standard">Standard</option>
+            <option value="Superior">Superior</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Suite">Suite</option>
+          </select>
+
+        <label for="-"><b>brabra</b></label>
+        <select>
+            <option value="volvo">-</option>
+            <option value="saab">-</option>
+            <option value="opel">-</option>
+            <option value="audi">-</option>
+          </select>
+          <p style="color:red">*Max 2 adults*</p>
+        <hr>
+        <br>
+        <h5>
+          Check-in with FACE:
+          <input onclick="" type="checkbox" value="face-on">
+        </h5>
+        <b>First name</b>
+        <input type="text">
+        <b>Last Name</b>
+        <input type="text">
         <b>Email</b>
-        <input id="signin-email" type="text" placeholder="Enter Username" autocomplete="on" required>
-        <b>Password</b>
-        <input id="signin-password" type="password" placeholder="Enter Password" autocomplete="on" required>
-        <button style="background-color: #3EC1D5;" id="submit-signin" type="submit">Sign In</button>
+        <input type="text">
+        <b>Phone number</b>
+        <input type="text">
+        <button type="submit" class="registerbtn">Book now</button>
       </div>
     </form>
-  </div>
+    
 
-  <!-- Signup popup -->
-  <div id="popup-signup" class="modal" style="z-index: 10;">
+
+    <!-- Signin popup -->
+    <div id="popup-signin" class="modal" style="z-index: 10;">
+      <form id="signin-from" class="modal-content animate">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <h1>Sign in</h1>
+        </div>
+
+        <div class="container" style="padding: 16px;">
+          <b>Email</b>
+          <input id="signin-email" type="text" placeholder="Enter Username" autocomplete="on" required>
+          <b>Password</b>
+          <input id="signin-password" type="password" placeholder="Enter Password" autocomplete="on" required>
+          <button style="background-color: #3EC1D5;" id="submit-signin" type="submit">Sign In</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Signup popup -->
+    <div id="popup-signup" class="modal" style="z-index: 10;">
       <form id="signup-from" class="modal-content animate">
         <div class="imgcontainer">
           <span onclick="document.getElementById('popup-signin').style.display='none'" class="close"
             title="Close Modal">&times;</span>
           <h1>Sign-up</h1>
         </div>
-  
+
         <div class="container" style="padding: 16px;">
-            <b>Email</b>
-            <input id="signup-email" type="text" placeholder="Enter Username" required>
-            <b>Password</b>
-            <input id="signup-password" type="password" placeholder="Enter Password" required>
+          <b>Email</b>
+          <input id="signup-email" type="text" placeholder="Enter Username" required>
+          <b>Password</b>
+          <input id="signup-password" type="password" placeholder="Enter Password" required>
           <button id="submit-signup" type="submit">Sign Up</button>
         </div>
       </form>
     </div>
+    <div class="container">
+      <div class="row">
+
+      </div>
+    </div>
 </body>
 
-  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
-  
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/venobox/venobox.min.js"></script>
-  <script src="lib/knob/jquery.knob.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/parallax/parallax.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
-  <script src="lib/appear/jquery.appear.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/venobox/venobox.min.js"></script>
+<script src="lib/knob/jquery.knob.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/parallax/parallax.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+<script src="lib/appear/jquery.appear.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
 
-  <script src="js/main.js"></script>
-  <script src="backend/connfirebase.js"></script>
-  <script src="backend/auth.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<script src="js/main.js"></script>
+<script src="backend/connfirebase.js"></script>
+<script src="backend/auth.js"></script>
 </body>
 
 </html>
