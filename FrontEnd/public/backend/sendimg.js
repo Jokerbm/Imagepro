@@ -1,5 +1,5 @@
 /*---------------------
-   Snap-Face
+Snap-Face
 --------------------- */
 function snapface() {
     if (document.getElementById("snap-face").checked == true){
@@ -17,17 +17,23 @@ function snapface() {
       localstream.stop();
     }
   }
-  
     var video = document.getElementById('video');
-  // Trigger photo take
     document.getElementById("snap").addEventListener("click", function() {
-        console.log('snap')
+      console.log("SNAP")
+        //Upload Snap
+      var filebt = document.getElementById("filebt");
+      filebt.addEventListener('change', function(e){
+        console.log("Find user")
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log("Upload Process..")
+            var file = video;
+          
+            let storageRef = firebase.storage().ref(user.email + "/" + user.email[0] + "1");
+            var task = storageRef.put(file);
+          } else {
+            console.log("Fail")
+          }
+        });
+      })
   });
-
-  var filebt = document.getElementById("filebt");
-    filebt.addEventListener('change', function(e){
-        var file = e.target.files[0];
-
-        let storageRef = firebase.storage().ref("japan" + "1");
-        var task = storageRef.put(file);
-    })

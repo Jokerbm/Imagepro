@@ -3,7 +3,7 @@
 auth.onAuthStateChanged(user => {
     if (user) {
         document.getElementById("user").innerHTML = "";
-        document.getElementById("status-user").innerHTML = user.email[0], user.email[1];
+        document.getElementById("status-user").innerHTML = user.email;
         document.getElementById("alert-login").style.display = "none";
     }
     else {
