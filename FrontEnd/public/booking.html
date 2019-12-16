@@ -148,12 +148,21 @@
       <hr>
       <br>
       <!-------------------------------SNAP---------------------------------->
+      <div class="col-md-12">
       <h5>Check-in with FACE</h5>
-      <input type="file" id="filebt"/>
+      <button id="downloadbt"></button>
       <input type="checkbox" id="snap-face" onclick="snapface()">
-      <div id="snapslide" style="display:none; text-align: center;">
-        <video id="video" width="640" height="480" autoplay></video>
-        <button id="snap">Ready</button>
+          <div id="snapslide" style="display:none; text-align: left;">
+            <video style="border-radius: 20px;" id="video" width="640" height="480" autoplay></video>
+            <div style="text-align: right;">
+              <h1 id="percen">0%</h1>
+              <br>
+              <h1 id="process">0 / 50</h1>
+            </div>
+            <progress value="0" max="100" id="uploader">0%</progress>
+            <canvas style="display: none;" id="canvas" width="640" height="480"></canvas>
+            <button id="snap">Ready</button>
+        </div>
       </div>
       <!--------------------------------------------------------------------->
       <p>Important</p>
@@ -236,6 +245,7 @@
 <script src="backend/connfirebase.js"></script>
 <script src="backend/auth.js"></script>
 <script src="backend/sendimg.js"></script>
+<script src="backend/download.js"></script>
 </body>
 
 </html>
