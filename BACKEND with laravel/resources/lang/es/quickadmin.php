@@ -102,7 +102,7 @@ return [
 	'qa_user' => 'Usuario',
 	'qa_name' => 'Nombre',
 	'qa_email' => 'Correo',
-	'qa_password' => 'Password',
+	'qa_password' => 'Contraseña',
 	'qa_remember_token' => 'Recordar token',
 	'qa_permissions' => 'Permisos',
 	'qa_client' => 'Cliente',
