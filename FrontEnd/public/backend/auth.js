@@ -4,9 +4,11 @@ auth.onAuthStateChanged(user => {
     if (user) {
         document.getElementById("user").innerHTML = "";
         document.getElementById("status-user").innerHTML = user.email;
+        document.getElementById("alert-login").style.display = "none";
     }
     else {
         document.getElementById("status-user").innerHTML = "";
+        document.getElementById("booking").style.display = "none";
     }
 })
 
